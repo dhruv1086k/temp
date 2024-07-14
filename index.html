@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex - Animator Professionalism Editor Xcellence</title>
+    <link rel="icon" href="./components/images/title_Logo.png">
+    <meta name="description"
+        content="APEX is the esteemed design society of TIPS, Dwarka, dedicated to elevating the field of design to new heights. With a large and active membership, we have conducted numerous workshops to enhance our skills. Our members utilize a variety of Adobe design software, including Photoshop, Illustrator, and InDesign, to create innovative and impactful designs.">
+    <meta name="keywords" content="APEX, designing, designers, editing, apex">
+    <link href="./components/css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./components/css/style.css">
+</head>
+
+<body>'
+    <div class="bgVideo">
+        <video autoplay muted loop>
+            <source src="./components/images/bgVid.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="landingPage" id="particle-slider">
+        <div class="slides">
+            <div class="slide" data-src="./components/images/logo_2.png"></div>
+        </div>
+        <canvas class="draw"></canvas>
+    </div>
+
+
+    <script>
+        var init = function () {
+            var ps = new ParticleSlider({
+                width: 1e6,
+                height: 1e6
+            });
+        }
+
+        window.addEventListener('load', init, false);
+
+    </script>
+    <script src="./components/js/ps-0.9.js"></script>
+</body>
+
+</html>
