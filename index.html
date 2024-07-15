@@ -9,36 +9,130 @@
     <meta name="description"
         content="APEX is the esteemed design society of TIPS, Dwarka, dedicated to elevating the field of design to new heights. With a large and active membership, we have conducted numerous workshops to enhance our skills. Our members utilize a variety of Adobe design software, including Photoshop, Illustrator, and InDesign, to create innovative and impactful designs.">
     <meta name="keywords" content="APEX, designing, designers, editing, apex">
+    <script src="https://kit.fontawesome.com/e64b4eb724.js" crossorigin="anonymous"></script>
     <link href="./components/css/output.css" rel="stylesheet">
     <link rel="stylesheet" href="./components/css/style.css">
 </head>
 
-<body>'
+<body>
+    <!-- /* ~~~~~~~~~~~~~~~~~~~  CURSOR STYLING  ~~~~~~~~~~~~~~~~~~~~~ */ -->
+    <div class="cursor pointer-events-none fixed block rounded-none mix-blend-difference top-0 left-0 z-Infinity">
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+        <div class="circle circleProp"></div>
+    </div>
+
+    <!-- /* ~~~~~~~~~~~~~~~~~~~ BACKGROUND VIDEO ~~~~~~~~~~~~~~~~~~~~~ */ -->
     <div class="bgVideo">
         <video autoplay muted loop>
             <source src="./components/images/bgVid.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="landingPage" id="particle-slider">
-        <div class="slides">
-            <div class="slide" data-src="./components/images/logo_2.png"></div>
+
+    <div class="landingPage relative w-full h-screen overflow-hidden">
+        <!-- /* ~~~~~~~~~~~~~~~~~~~ NAVBAR ~~~~~~~~~~~~~~~~~~~~~ */ -->
+        <div class="navbar">
+            <div class="menu-open"><i class="fa-solid fa-bars-staggered"></i></div>
+            <div class="nav-container">
+                <div class="menu-close"><i class="fa-solid fa-close"></i></div>
+                <div class="socials">
+                    <span><a href="#">facebook</a></span>
+                    <span><a href="#">instagram</a></span>
+                </div>
+                <nav class="menu">
+                    <div class="menu__item">
+                        <a class="menu__item-link">Home</a>
+                        <img class="menu__item-img" src="./components/images/navbar1.jpg" />
+                        <div class="marquee">
+                            <div class="marquee__inner">
+                                <span>Home - Home - Home - Home - Home - Home - Home</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__item">
+                        <a class="menu__item-link">Gallery</a>
+                        <img class="menu__item-img" src="./components/images/title_Logo.png" />
+                        <div class="marquee">
+                            <div class="marquee__inner">
+                                <span>Apex Gallery - Apex Gallery - Apex Gallery - Apex Gallery - Apex Gallery - Apex
+                                    Gallery
+                                    - Apex Gallery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__item">
+                        <a class="menu__item-link">About</a>
+                        <img class="menu__item-img" src="./components/images/title_Logo.png" />
+                        <div class="marquee">
+                            <div class="marquee__inner">
+                                <span>About - About - About - About - About - About - About</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__item">
+                        <a class="menu__item-link">Contact</a>
+                        <img class="menu__item-img" src="./components/images/title_Logo.png" />
+                        <div class="marquee">
+                            <div class="marquee__inner">
+                                <span>Contact - Contact - Contact - Contact - Contact - Contact -
+                                    Contact</span>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
-        <canvas class="draw"></canvas>
+
+        <!-- /* ~~~~~~~~~~~~~~~~~~~ PARTICLE DUST ~~~~~~~~~~~~~~~~~~~~~ */ -->
+        <div id="particle-slider" class="object bg-transparent w-full h-full overflow-hidden relative z-t2">
+            <div class="slides">
+                <div class="slide" data-src="./components/images/logo_2.png"></div>
+            </div>
+            <canvas class="draw"></canvas>
+        </div>
+
+        <!-- /* ~~~~~~~~~~~~~~~~~~~ SOFTWARE MOVE EFFECT ~~~~~~~~~~~~~~~~~~~~~ */ -->
+        <div
+            class="container absolute w-full h-full flex justify-center items-center overflow-hidden top-0 left-0 z-bottomest">
+            <img src="./components/images/1.png" class="object softImg softImg1">
+            <img src="./components/images/2.png" class="object softImg softImg2">
+            <img src="./components/images/3.png" class="object softImg softImg3">
+            <img src="./components/images/4.png" class="object softImg softImg4">
+            <img src="./components/images/5.png" class="object softImg softImg5">
+            <img src="./components/images/6.png" class="object softImg softImg6">
+            <img src="./components/images/7.png" class="object softImg softImg7">
+        </div>
+
+        <!-- <button class="absolute bottom-0 z-10">EXPERIENCE APEX</button> -->
+
     </div>
 
 
+    <!-- ~~~~~~~~~~~~~~~~~~~ scripts ~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <script src="./components/js/apexParticleDust.js"></script>
+    <script src="./components/js/cursor.js"></script>
+    <script src="./components/js/softwareMove.js"></script>
+    <script src="./components/js/navbar.js"></script>
     <script>
+        // ~~~~~~~~~~~~~~~~~~~  PARTICLE DUST  ~~~~~~~~~~~~~~~~~~~~~
         var init = function () {
             var ps = new ParticleSlider({
                 width: 1e6,
                 height: 1e6
             });
         }
-
         window.addEventListener('load', init, false);
 
     </script>
-    <script src="./components/js/ps-0.9.js"></script>
 </body>
 
 </html>

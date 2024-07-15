@@ -2,7 +2,13 @@
 module.exports = {
   content: ["*"],
   theme: {
-    extend: {},
+    extend: {
+      zIndex: {
+        Infinity: "999999999999",
+        bottomest: "-1",
+        t2: "2",
+      },
+    },
   },
   plugins: [],
 };

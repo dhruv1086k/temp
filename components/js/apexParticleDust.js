@@ -1,11 +1,3 @@
-// ┌────────────────────────────────────────────────────────────────────┐ \\
-// │ ParticleSlider                   |                     Version 0.9 │ \\
-// ├────────────────────────────────────────────────────────────────────┤ \\
-// │ Copyright © 2013 Tamino Martinius (http://zaku.eu)                 │ \\
-// │ Copyright © 2013 Particleslider.com (http://particleslider.com)    │ \\
-// ├────────────────────────────────────────────────────────────────────┤ \\
-// │ Terms of usage: (http://particleslider.com/legal/license)            │ \\
-// └────────────────────────────────────────────────────────────────────┘ \\
 function ParticleSlider(a) {
   var b = this;
   (b.sliderId = "particle-slider"),
@@ -179,6 +171,45 @@ function ParticleSlider(a) {
           (b.mouseDownRegion = 0);
       }
     });
+  b.$canv.ontouchstart = function (e) {
+    if (b.imgs.length > 1) {
+      var a = 0;
+      var touch = e.touches[0];
+      var rect = b.$canv.getBoundingClientRect();
+      var touchX = touch.clientX - rect.left;
+      b.mx = touchX;
+      b.mx >= 0 && b.mx < b.arrowPadding * 2 + b.$prevCanv.width
+        ? (a = -1)
+        : b.mx > 0 &&
+          b.mx > b.cw - (b.arrowPadding * 2 + b.$nextCanv.width) &&
+          (a = 1),
+        (b.mouseDownRegion = a);
+    }
+  };
+
+  b.$canv.ontouchmove = function (e) {
+    var touch = e.touches[0];
+    var rect = b.$canv.getBoundingClientRect();
+    b.mx = touch.clientX - rect.left;
+    b.my = touch.clientY - rect.top;
+  };
+
+  b.$canv.ontouchend = function (e) {
+    if (b.imgs.length > 1) {
+      var a = "";
+      b.mx >= 0 && b.mx < b.arrowPadding * 2 + b.$prevCanv.width
+        ? (a = -1)
+        : b.mx > 0 &&
+          b.mx > b.cw - (b.arrowPadding * 2 + b.$nextCanv.width) &&
+          (a = 1),
+        a != 0 &&
+          b.mouseDownRegion != 0 &&
+          (a != b.mouseDownRegion && (a *= -1),
+          b.nextSlideTimer && clearTimeout(b.nextSlideTimer),
+          b.nextSlide(a)),
+        (b.mouseDownRegion = 0);
+    }
+  };
   if (b.imgs.length == 0)
     for (var d = 0, e = b.$$slides.length; d < e; d++) {
       var f = new Image();
