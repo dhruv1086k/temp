@@ -16,7 +16,8 @@
 
 <body>
     <!-- /* ~~~~~~~~~~~~~~~~~~~  CURSOR STYLING  ~~~~~~~~~~~~~~~~~~~~~ */ -->
-    <div class="cursor pointer-events-none fixed block rounded-none mix-blend-difference top-0 left-0 z-Infinity">
+    <div
+        class="cursor pointer-events-none fixed block rounded-none mix-blend-difference top-0 left-0 z-Infinity scale[1]">
         <div class="circle circleProp"></div>
         <div class="circle circleProp"></div>
         <div class="circle circleProp"></div>
@@ -109,8 +110,13 @@
             <img src="./components/images/6.png" class="object softImg softImg6">
             <img src="./components/images/7.png" class="object softImg softImg7">
         </div>
+        <div class="w-full h-v20 absolute bottom-0 flex justify-center items-center">
+            <div class="ctaBtn font-bold border-2 border-skin-base2 bg-skin-base3 text-2xl rounded-full text-white z-50 cursor-pointer select-none"
+                role="button" tabindex="0"> <a href="https://google.com" target="_blank"
+                    class="px-16 py-5 block">EXPERIENCE APEX</a>
+            </div>
+        </div>
 
-        <!-- <button class="absolute bottom-0 z-10">EXPERIENCE APEX</button> -->
 
     </div>
 
@@ -122,8 +128,18 @@
     <script src="./components/js/cursor.js"></script>
     <script src="./components/js/softwareMove.js"></script>
     <script src="./components/js/navbar.js"></script>
+    <script type="text/javascript" src="./components/js/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        // ~~~~~~~~~~~~~~~~~~~ VANILLA TILT JS ~~~~~~~~~~~~~~~~~~~~~
+        VanillaTilt.init(document.querySelector(".ctaBtn"), {
+            max: 25,
+            speed: 400,
+            glare: 1,
+            "max-glare": 0.5,
+        });
+    </script>
     <script>
-        // ~~~~~~~~~~~~~~~~~~~  PARTICLE DUST  ~~~~~~~~~~~~~~~~~~~~~
+        // ~~~~~~~~~~~~~~~~~~~ PARTICLE DUST ~~~~~~~~~~~~~~~~~~~~~
         var init = function () {
             var ps = new ParticleSlider({
                 width: 1e6,
@@ -133,6 +149,7 @@
         window.addEventListener('load', init, false);
 
     </script>
+
 </body>
 
 </html>

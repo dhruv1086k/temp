@@ -8,6 +8,13 @@
     box-sizing: border-box;
 }
 
+/* ~~~~~~~~~~~~~~~~~~  ROOT COLORS  ~~~~~~~~~~~~~~~~~~~~~ */
+:root {
+    --primary-color: #fff;
+    --secondary-color: #F96613;
+    --btn-glass: rgba(255, 255, 255, 0.1);
+}
+
 /* ~~~~~~~~~~~~~~~~~~  HTML & BODY  ~~~~~~~~~~~~~~~~~~~~~ */
 html {
     font-size: 62.5%;
@@ -184,4 +191,8 @@ body {
 
 .marquee span {
     font-style: italic;
+}
+
+.ctaBtn {
+    box-shadow: 0px 0px 30px var(--secondary-color);
 }
