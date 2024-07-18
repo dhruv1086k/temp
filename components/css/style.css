@@ -59,8 +59,19 @@ body {
     object-fit: cover;
 }
 
-
 /* ~~~~~~~~~~~~~~~~~~~  LANDING PAGE  ~~~~~~~~~~~~~~~~~~~~~  */
+.ctaBtn {
+    box-shadow: 0px 0px 30px var(--secondary-color);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~  NEXT PAGE  ~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* ~~~~~~~~~~~~~~~~~~~  NEXT PAGE - { NAVBAR }  ~~~~~~~~~~~~~~~~~~~~~ */
+main {
+    overflow: hidden;
+}
+
 .menu-open {
     color: #fff;
     z-index: 998;
@@ -193,6 +204,12 @@ body {
     font-style: italic;
 }
 
-.ctaBtn {
-    box-shadow: 0px 0px 30px var(--secondary-color);
-}
+/* ~~~~~~~~~~~~~~~~~~~  NEXT PAGE - { DEPARTMENT CARDS }  ~~~~~~~~~~~~~~~~~~~~~ */
+/* 
+    -- teams.css
+*/
+
+/* ~~~~~~~~~~~~~~~~~~~  NEXT PAGE - { DEPARTMENT CARDS }  ~~~~~~~~~~~~~~~~~~~~~ */
+/* 
+ -- gallery.css
+*/

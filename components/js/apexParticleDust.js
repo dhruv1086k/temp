@@ -6,8 +6,8 @@ function ParticleSlider(a) {
     (b.width = 0),
     (b.height = 20),
     (b.ptlGap = 0),
-    (b.ptlSize = 1),
-    (b.slideDelay = 10),
+    (b.ptlSize = 0.2),
+    (b.slideDelay = 5),
     (b.arrowPadding = 10),
     (b.showArrowControls = !0),
     (b.onNextSlide = null),
@@ -528,4 +528,70 @@ var psParticle = function (a) {
           window.setTimeout(a, 1e3 / 60);
         };
     c(a);
+    ParticleSlider.prototype.cyclePxlBuffer = function (a) {
+      var b = this;
+      var c = b.ctx;
+      var d = b.cw;
+      var e = b.ch;
+      var c = this.ctx;
+      c.globalAlpha = 0.7;
+      c.fillStyle = "rgba(0, 0, 0, 0.8)"; // Apply slight blur
+      c.fillRect(0, 0, d, e);
+      c.globalAlpha = 1;
+      var f = b.pxlBuffer.first;
+      var g = b.recycleBuffer;
+      while (f != null) {
+        f.x += f.vx;
+        f.y += f.vy;
+        f.z += f.vz;
+        f.life -= 0.1;
+        f.s -= 0.01;
+        if (f.s <= 0 || f.life <= 0) {
+          b.pxlBuffer.first = f.next;
+          f.next = g.first;
+          g.first = f;
+          f = b.pxlBuffer.first;
+          continue;
+        }
+        if (a == !0) {
+          f.vx += f.rand(-1, 1) / 100;
+          f.vy += f.rand(-1, 1) / 100;
+          f.vz += f.rand(-1, 1) / 100;
+        }
+        c.fillStyle =
+          "rgba(" +
+          f.r +
+          "," +
+          f.g +
+          "," +
+          f.b +
+          "," +
+          Math.min(1, Math.max(0, f.life / 10)) +
+          ")";
+        c.beginPath();
+        c.arc(f.x, f.y, f.s, 0, 2 * Math.PI, !1);
+        c.fill();
+        f = f.next;
+      }
+    };
+    ParticleSlider.prototype.addPxl = function (a, b, c, d, e) {
+      var f = this;
+      var g = f.recycleBuffer.first;
+      if (g) {
+        f.recycleBuffer.first = g.next;
+        g.x = a;
+        g.y = b;
+        g.z = f.rand(-100, 100);
+        g.r = c;
+        g.g = d;
+        g.b = e;
+        g.vx = f.rand(-1, 1) / 4;
+        g.vy = f.rand(-1, 1) / 4;
+        g.vz = f.rand(-1, 1) / 4;
+        g.life = f.rand(5, 10);
+        g.s = 0.1 + f.rand(0, f.ptlSize / 100);
+        return g;
+      }
+      return null;
+    };
   });

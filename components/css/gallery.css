@@ -1,0 +1,90 @@
+/* General Flexbox Styles */
+.flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#unique-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    height: 300vh;
+    rotate: -20deg;
+    gap: 2vh;
+}
+
+.carousel-item {
+    width: 250%;
+    height: 40vh;
+    gap: 2vh;
+}
+
+.image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+}
+
+.overlay-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/Assets/noise.png);
+}
+
+.overlay-wrapper button {
+    padding: 1vw 2.4vw;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #000;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.8em;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    outline: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.overlay-wrapper button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.item-one,
+.item-three,
+.item-five {
+    transition: all ease 0.5s;
+}
+
+.item-two,
+.item-four {
+    transition: all ease 0.8s;
+}
